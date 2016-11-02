@@ -1,0 +1,12 @@
+C:\Users\kingdee\Desktop\前端\EntityGenerator\EntityGenerator\bin\Debug\EntityGenerator.exe.config
+C:\Users\kingdee\Desktop\前端\EntityGenerator\EntityGenerator\obj\Debug\EntityGenerator.Properties.Resources.resources
+C:\Users\kingdee\Desktop\前端\EntityGenerator\EntityGenerator\obj\Debug\EntityGenerator.csproj.GenerateResource.Cache
+C:\Users\kingdee\Desktop\前端\EntityGenerator\EntityGenerator\bin\Debug\EntityGenerator.exe
+C:\Users\kingdee\Desktop\前端\EntityGenerator\EntityGenerator\bin\Debug\EntityGenerator.pdb
+C:\Users\kingdee\Desktop\前端\EntityGenerator\EntityGenerator\bin\Debug\MySql.Data.dll
+C:\Users\kingdee\Desktop\前端\EntityGenerator\EntityGenerator\obj\Debug\EntityGenerator.exe
+C:\Users\kingdee\Desktop\前端\EntityGenerator\EntityGenerator\obj\Debug\EntityGenerator.pdb
+C:\Users\kingdee\Desktop\前端\EntityGenerator\EntityGenerator\obj\Debug\EntityGenerator.codeGenerator_frm.resources
+C:\Users\kingdee\Desktop\前端\EntityGenerator\EntityGenerator\obj\Debug\EntityGenerator.csprojResolveAssemblyReference.cache
+C:\Users\kingdee\Desktop\前端\EntityGenerator\EntityGenerator\obj\Debug\EntityGenerator.Preview_frm.resources
+C:\Users\kingdee\Desktop\前端\EntityGenerator\EntityGenerator\obj\Debug\EntityGenerator.main_frm.resources
