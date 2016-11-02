@@ -127,8 +127,9 @@ using System.Threading.Tasks;
 namespace {{yx-namespace}}
 {{yx-modifier}} class {{yx-tableName}}
 {
-      {{yx-for}}
-       public {{yx-columnType}}  {{yx-column}} {get;set;}
+      {{yx-columns}}
+       public {{yx-columnType}}  {{yx-columnName}} {get;set;}
+      public  string  i=0
       {{yx-end}}
 }</value>
   </data>

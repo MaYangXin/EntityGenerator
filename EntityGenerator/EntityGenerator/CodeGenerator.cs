@@ -16,7 +16,7 @@ namespace EntityGenerator
     public partial class codeGenerator_frm : Form
     {
         private IsqlAdapter sqlAdapter;
-        private List<table> tables;
+        private List<TableInfo> tables;
         public codeGenerator_frm(IsqlAdapter sqlAdapter)
         {
             InitializeComponent();
@@ -57,10 +57,6 @@ namespace EntityGenerator
                 var i=foreachRegex.Matches(cSharp_content_rtx.Text).Count;
                 cSharp_content_rtx.Text.Replace("{{yx-foreach}}", cSharp_modifier_txt.Text);
                 new Preview_frm().ShowDialog();
-            }
-            else
-            {
-                MessageBox.Show("该数据库没有表可以预览");
             }
         }
         private void Set()

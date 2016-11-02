@@ -36,9 +36,9 @@ namespace EntityGenerator.sqlAdapter
             }
             return true;
         }
-        public List<table> GetAllTable()
+        public List<TableInfo> GetAllTable()
         {
-            var tables = new List<table>();
+            var tables = new List<TableInfo>();
             using (var conn = new MySqlConnection(connStr))
             {
                 conn.Open();
@@ -50,10 +50,35 @@ namespace EntityGenerator.sqlAdapter
                 {
                     foreach (DataRow row in dsResult.Tables[0].Rows)
                     {
-                        tables.Add(new table
+                        tables.Add(new TableInfo
                         {
                             tableName = row["table_Name"].ToString(),
                             IsView = row["table_type"] == "VIEW" ? true : false
+                        });
+                    }
+                }
+            }
+            return tables;
+        }
+        public List<ColumnInfo> GetColumnsByTableName(string tableName)
+        {
+            var tables = new List<ColumnInfo>();
+            using (var conn = new MySqlConnection(connStr))
+            {
+                conn.Open();
+                var cmd = new MySqlCommand("desc @tableName", conn);
+                cmd.Parameters.Add(new MySqlParameter("@tableName", tableName));
+                var adapter = new MySqlDataAdapter(cmd);
+                var dsResult = new DataSet();
+                adapter.Fill(dsResult);
+                if (dsResult.Tables.Count > 0)
+                {
+                    foreach (DataRow row in dsResult.Tables[0].Rows)
+                    {
+                        tables.Add(new ColumnInfo
+                        {
+                            columnName = row["Field"].ToString(),
+                            columnType = row["Type"].ToString()
                         });
                     }
                 }

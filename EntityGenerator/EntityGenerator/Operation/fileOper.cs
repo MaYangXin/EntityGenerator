@@ -4,11 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EntityGenerator
+namespace EntityGenerator.Operation
 {
-    public class table
+    class FileOper
     {
-        public string tableName { get; set; }
-        public bool IsView { get; set; }
     }
 }

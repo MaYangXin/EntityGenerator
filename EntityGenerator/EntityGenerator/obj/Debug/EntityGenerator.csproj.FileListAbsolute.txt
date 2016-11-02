@@ -10,3 +10,14 @@ C:\Users\kingdee\Desktop\前端\EntityGenerator\EntityGenerator\obj\Debug\Entity
 C:\Users\kingdee\Desktop\前端\EntityGenerator\EntityGenerator\obj\Debug\EntityGenerator.csprojResolveAssemblyReference.cache
 C:\Users\kingdee\Desktop\前端\EntityGenerator\EntityGenerator\obj\Debug\EntityGenerator.Preview_frm.resources
 C:\Users\kingdee\Desktop\前端\EntityGenerator\EntityGenerator\obj\Debug\EntityGenerator.main_frm.resources
+D:\MyGitProject\EntityGenerator\EntityGenerator\EntityGenerator\bin\Debug\EntityGenerator.exe.config
+D:\MyGitProject\EntityGenerator\EntityGenerator\EntityGenerator\obj\Debug\EntityGenerator.exe
+D:\MyGitProject\EntityGenerator\EntityGenerator\EntityGenerator\obj\Debug\EntityGenerator.pdb
+D:\MyGitProject\EntityGenerator\EntityGenerator\EntityGenerator\bin\Debug\EntityGenerator.exe
+D:\MyGitProject\EntityGenerator\EntityGenerator\EntityGenerator\bin\Debug\EntityGenerator.pdb
+D:\MyGitProject\EntityGenerator\EntityGenerator\EntityGenerator\obj\Debug\EntityGenerator.csprojResolveAssemblyReference.cache
+D:\MyGitProject\EntityGenerator\EntityGenerator\EntityGenerator\obj\Debug\EntityGenerator.main_frm.resources
+D:\MyGitProject\EntityGenerator\EntityGenerator\EntityGenerator\obj\Debug\EntityGenerator.codeGenerator_frm.resources
+D:\MyGitProject\EntityGenerator\EntityGenerator\EntityGenerator\obj\Debug\EntityGenerator.Preview_frm.resources
+D:\MyGitProject\EntityGenerator\EntityGenerator\EntityGenerator\obj\Debug\EntityGenerator.Properties.Resources.resources
+D:\MyGitProject\EntityGenerator\EntityGenerator\EntityGenerator\obj\Debug\EntityGenerator.csproj.GenerateResource.Cache

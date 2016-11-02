@@ -32,6 +32,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.table_tvw = new System.Windows.Forms.TreeView();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.preview_btn = new System.Windows.Forms.Button();
             this.generator_btn = new System.Windows.Forms.Button();
             this.cSharp_format_txt = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -44,6 +45,7 @@
             this.cSharp_content_rtx = new System.Windows.Forms.RichTextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.java_content_rtx = new System.Windows.Forms.RichTextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label5 = new System.Windows.Forms.Label();
             this.java_namespace_txt = new System.Windows.Forms.TextBox();
@@ -53,8 +55,6 @@
             this.label7 = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.preview_btn = new System.Windows.Forms.Button();
-            this.java_content_rtx = new System.Windows.Forms.RichTextBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.java_Page.SuspendLayout();
@@ -93,6 +93,16 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(445, 98);
             this.panel2.TabIndex = 1;
+            // 
+            // preview_btn
+            // 
+            this.preview_btn.Location = new System.Drawing.Point(81, 34);
+            this.preview_btn.Name = "preview_btn";
+            this.preview_btn.Size = new System.Drawing.Size(98, 39);
+            this.preview_btn.TabIndex = 9;
+            this.preview_btn.Text = "预览";
+            this.preview_btn.UseVisualStyleBackColor = true;
+            this.preview_btn.Click += new System.EventHandler(this.preview_btn_Click);
             // 
             // generator_btn
             // 
@@ -216,6 +226,15 @@
             this.tabPage2.Text = "java";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // java_content_rtx
+            // 
+            this.java_content_rtx.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.java_content_rtx.Location = new System.Drawing.Point(3, 103);
+            this.java_content_rtx.Name = "java_content_rtx";
+            this.java_content_rtx.Size = new System.Drawing.Size(431, 384);
+            this.java_content_rtx.TabIndex = 1;
+            this.java_content_rtx.Text = "";
+            // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.label5);
@@ -302,25 +321,6 @@
             this.groupBox3.TabIndex = 0;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "参数介绍";
-            // 
-            // preview_btn
-            // 
-            this.preview_btn.Location = new System.Drawing.Point(81, 34);
-            this.preview_btn.Name = "preview_btn";
-            this.preview_btn.Size = new System.Drawing.Size(98, 39);
-            this.preview_btn.TabIndex = 9;
-            this.preview_btn.Text = "预览";
-            this.preview_btn.UseVisualStyleBackColor = true;
-            this.preview_btn.Click += new System.EventHandler(this.preview_btn_Click);
-            // 
-            // java_content_rtx
-            // 
-            this.java_content_rtx.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.java_content_rtx.Location = new System.Drawing.Point(3, 103);
-            this.java_content_rtx.Name = "java_content_rtx";
-            this.java_content_rtx.Size = new System.Drawing.Size(431, 384);
-            this.java_content_rtx.TabIndex = 1;
-            this.java_content_rtx.Text = "";
             // 
             // codeGenerator_frm
             // 
