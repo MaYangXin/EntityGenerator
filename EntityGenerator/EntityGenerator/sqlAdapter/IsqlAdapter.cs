@@ -13,6 +13,6 @@ namespace EntityGenerator.sqlAdapter
         string connStr { get; set; }
         bool TestConnection();
         List<TableInfo> GetAllTable();
-        public List<ColumnInfo> GetColumnsByTableName(string tableName);
+        List<ColumnInfo> GetColumnsByTableName(string tableName);
     }
 }

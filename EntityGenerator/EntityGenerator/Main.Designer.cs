@@ -144,6 +144,7 @@
             this.userName_txt.Name = "userName_txt";
             this.userName_txt.Size = new System.Drawing.Size(170, 21);
             this.userName_txt.TabIndex = 2;
+            this.userName_txt.Text = "sa";
             // 
             // databaseName_txt
             // 
@@ -151,6 +152,7 @@
             this.databaseName_txt.Name = "databaseName_txt";
             this.databaseName_txt.Size = new System.Drawing.Size(170, 21);
             this.databaseName_txt.TabIndex = 4;
+            this.databaseName_txt.Text = "shaokun";
             // 
             // password_txt
             // 
@@ -158,6 +160,7 @@
             this.password_txt.Name = "password_txt";
             this.password_txt.Size = new System.Drawing.Size(170, 21);
             this.password_txt.TabIndex = 3;
+            this.password_txt.Text = "123456";
             // 
             // server_txt
             // 
@@ -165,6 +168,7 @@
             this.server_txt.Name = "server_txt";
             this.server_txt.Size = new System.Drawing.Size(170, 21);
             this.server_txt.TabIndex = 1;
+            this.server_txt.Text = ".";
             // 
             // label4
             // 

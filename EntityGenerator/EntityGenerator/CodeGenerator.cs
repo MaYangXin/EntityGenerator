@@ -54,7 +54,7 @@ namespace EntityGenerator
                 //cSharp_content_rtx.Text.Replace("{{yx-namespace}}", cSharp_namespace_txt.Text);
                 //cSharp_content_rtx.Text.Replace("{{yx-modifier}}",cSharp_modifier_txt.Text);
                 var foreachRegex = new Regex("{{yx-foreach}}<%(/S/s)+%>");
-                var i=foreachRegex.Matches(cSharp_content_rtx.Text).Count;
+                var i = foreachRegex.Matches(cSharp_content_rtx.Text).Count;
                 cSharp_content_rtx.Text.Replace("{{yx-foreach}}", cSharp_modifier_txt.Text);
                 new Preview_frm().ShowDialog();
             }
@@ -65,7 +65,26 @@ namespace EntityGenerator
         }
         private void generator_btn_Click(object sender, EventArgs e)
         {
-
+            foreach (TreeNode topNode in table_tvw.TopNode.Nodes)
+            {
+                foreach (TreeNode node in topNode.Nodes)
+                {
+                    if (node.Checked)
+                    {
+                        var content = cSharp_content_rtx.Text.Replace("yx-namespace", cSharp_namespace_txt.Text)
+                               .Replace("yx-modifier", cSharp_modifier_txt.Text)
+                               .Replace("yx-tableName", node.Text);
+                        var columnInfos = sqlAdapter.GetColumnsByTableName(node.Text);
+                        var columnBuider = new StringBuilder();
+                        foreach (var column in columnInfos)
+                        {
+                            columnBuider.Append("public " + TypeConvert.ConvertToCSharp(column.columnType) + " " + column.columnName + "{get;set;}");
+                            columnBuider.Append("\r\n");
+                        }
+                        content = content.Replace("yx-content", columnBuider.ToString());
+                    }
+                }
+            }
         }
     }
 }

@@ -18,13 +18,13 @@ namespace EntityGenerator
         public main_frm()
         {
             InitializeComponent();
-            dataSource_cmb.SelectedIndex = 0;
+            dataSource_cmb.SelectedIndex = 1;
             var regex = new Regex(@"(?:{{yx-for}})([\w\W]*?)(?:{{yx-end}})");
             string a = @"{{yx-for}}
    var i=0;
    var j=2;
 {{yx-end}}";
-            var matches=regex.Matches(a);
+            var matches = regex.Matches(a);
             foreach (System.Text.RegularExpressions.Match match in matches)
             {
                 var yourWant = match.Value.ToString();
@@ -33,7 +33,7 @@ namespace EntityGenerator
 
         private void testConn_btn_Click(object sender, EventArgs e)
         {
-            if(FormValidate())
+            if (FormValidate())
             {
                 MessageBox.Show(TestConnection() ? "测试成功" : "测试失败");
             }
@@ -74,8 +74,8 @@ namespace EntityGenerator
             switch (dataSource_cmb.Text)
             {
                 case "mysql":
-                    sqlAdapter=new mysqlAdapter(connInfo);
-                    isTest =sqlAdapter.TestConnection(); break;
+                    sqlAdapter = new mysqlAdapter(connInfo);
+                    isTest = sqlAdapter.TestConnection(); break;
                 case "mssql":
                     sqlAdapter = new mssqlAdapter(connInfo);
                     isTest = sqlAdapter.TestConnection(); break;

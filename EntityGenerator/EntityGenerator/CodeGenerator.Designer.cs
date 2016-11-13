@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(codeGenerator_frm));
             this.panel1 = new System.Windows.Forms.Panel();
             this.table_tvw = new System.Windows.Forms.TreeView();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -196,7 +195,9 @@
             this.cSharp_content_rtx.Name = "cSharp_content_rtx";
             this.cSharp_content_rtx.Size = new System.Drawing.Size(431, 384);
             this.cSharp_content_rtx.TabIndex = 1;
-            this.cSharp_content_rtx.Text = resources.GetString("cSharp_content_rtx.Text");
+            this.cSharp_content_rtx.Text = "using System;\nusing System.Collections.Generic;\nusing System.Linq;\nusing System.T" +
+    "ext;\nusing System.Threading.Tasks;\n\nnamespace yx-namespace\n{\nyx-modifier class y" +
+    "x-tableName\n{\n   yx-content\n}\n}";
             // 
             // groupBox1
             // 
