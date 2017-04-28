@@ -36,8 +36,9 @@
             this.cancel_btn = new System.Windows.Forms.Button();
             this.confirm_btn = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.database_cmb = new System.Windows.Forms.ComboBox();
+            this.loadTxt = new System.Windows.Forms.Label();
             this.userName_txt = new System.Windows.Forms.TextBox();
-            this.databaseName_txt = new System.Windows.Forms.TextBox();
             this.password_txt = new System.Windows.Forms.TextBox();
             this.server_txt = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -83,9 +84,9 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(27, 153);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(77, 12);
+            this.label2.Size = new System.Drawing.Size(53, 12);
             this.label2.TabIndex = 4;
-            this.label2.Text = "数据库名称：";
+            this.label2.Text = "数据库：";
             // 
             // testConn_btn
             // 
@@ -99,7 +100,7 @@
             // 
             // cancel_btn
             // 
-            this.cancel_btn.Location = new System.Drawing.Point(211, 199);
+            this.cancel_btn.Location = new System.Drawing.Point(258, 199);
             this.cancel_btn.Name = "cancel_btn";
             this.cancel_btn.Size = new System.Drawing.Size(75, 37);
             this.cancel_btn.TabIndex = 7;
@@ -109,7 +110,7 @@
             // 
             // confirm_btn
             // 
-            this.confirm_btn.Location = new System.Drawing.Point(118, 199);
+            this.confirm_btn.Location = new System.Drawing.Point(150, 199);
             this.confirm_btn.Name = "confirm_btn";
             this.confirm_btn.Size = new System.Drawing.Size(75, 37);
             this.confirm_btn.TabIndex = 6;
@@ -119,8 +120,9 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.database_cmb);
+            this.groupBox1.Controls.Add(this.loadTxt);
             this.groupBox1.Controls.Add(this.userName_txt);
-            this.groupBox1.Controls.Add(this.databaseName_txt);
             this.groupBox1.Controls.Add(this.password_txt);
             this.groupBox1.Controls.Add(this.server_txt);
             this.groupBox1.Controls.Add(this.label4);
@@ -138,6 +140,22 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "连接到数据库";
             // 
+            // database_cmb
+            // 
+            this.database_cmb.FormattingEnabled = true;
+            this.database_cmb.Location = new System.Drawing.Point(116, 149);
+            this.database_cmb.Name = "database_cmb";
+            this.database_cmb.Size = new System.Drawing.Size(170, 20);
+            this.database_cmb.TabIndex = 12;
+            // 
+            // loadTxt
+            // 
+            this.loadTxt.AutoSize = true;
+            this.loadTxt.Location = new System.Drawing.Point(130, 180);
+            this.loadTxt.Name = "loadTxt";
+            this.loadTxt.Size = new System.Drawing.Size(0, 12);
+            this.loadTxt.TabIndex = 11;
+            // 
             // userName_txt
             // 
             this.userName_txt.Location = new System.Drawing.Point(116, 65);
@@ -146,21 +164,15 @@
             this.userName_txt.TabIndex = 2;
             this.userName_txt.Text = "sa";
             // 
-            // databaseName_txt
-            // 
-            this.databaseName_txt.Location = new System.Drawing.Point(116, 147);
-            this.databaseName_txt.Name = "databaseName_txt";
-            this.databaseName_txt.Size = new System.Drawing.Size(170, 21);
-            this.databaseName_txt.TabIndex = 4;
-            this.databaseName_txt.Text = "shaokun";
-            // 
             // password_txt
             // 
             this.password_txt.Location = new System.Drawing.Point(116, 106);
             this.password_txt.Name = "password_txt";
+            this.password_txt.PasswordChar = '*';
             this.password_txt.Size = new System.Drawing.Size(170, 21);
             this.password_txt.TabIndex = 3;
             this.password_txt.Text = "123456";
+            this.password_txt.LostFocus += new System.EventHandler(this.GetDatabases);
             // 
             // server_txt
             // 
@@ -168,7 +180,7 @@
             this.server_txt.Name = "server_txt";
             this.server_txt.Size = new System.Drawing.Size(170, 21);
             this.server_txt.TabIndex = 1;
-            this.server_txt.Text = ".";
+            this.server_txt.LostFocus += new System.EventHandler(this.GetDatabases);
             // 
             // label4
             // 
@@ -214,6 +226,8 @@
             this.ClientSize = new System.Drawing.Size(345, 299);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "main_frm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "数据库连接";
@@ -237,12 +251,13 @@
         private System.Windows.Forms.Button confirm_btn;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox userName_txt;
-        private System.Windows.Forms.TextBox databaseName_txt;
         private System.Windows.Forms.TextBox password_txt;
         private System.Windows.Forms.TextBox server_txt;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label loadTxt;
+        private System.Windows.Forms.ComboBox database_cmb;
     }
 }

@@ -15,8 +15,8 @@ namespace EntityGenerator.sqlAdapter
         public mysqlAdapter(ConnInfo connInfo)
         {
             this.connInfo = connInfo;
-            connStr = string.Format("server={0};user id={1};password={2};database={3}",
-            connInfo.server, connInfo.userName, connInfo.password, connInfo.databaseName);
+            connStr = string.Format("server={0};user id={1};password={2}",
+            connInfo.server, connInfo.userName, connInfo.password);
         }
         public bool TestConnection()
         {
@@ -53,12 +53,33 @@ namespace EntityGenerator.sqlAdapter
                         tables.Add(new TableInfo
                         {
                             tableName = row["table_Name"].ToString(),
-                            IsView = row["table_type"] == "VIEW" ? true : false
+                            IsView = row["table_type"].ToString() == "VIEW" ? true : false
                         });
                     }
                 }
             }
             return tables;
+        }
+        public List<String> GetAllDatabase()
+        {
+            var databases = new List<string>();
+            using (var conn = new MySqlConnection(connStr))
+            {
+                conn.Open();
+                var cmd = new MySqlCommand(@"SELECT SCHEMA_NAME
+FROM information_schema.SCHEMATA where SCHEMA_NAME not in ('mysql','information_schema','performance_schema')",conn);
+                var adapter = new MySqlDataAdapter(cmd);
+                var dsResult = new DataSet();
+                adapter.Fill(dsResult);
+                if (dsResult.Tables.Count > 0)
+                {
+                    foreach (DataRow row in dsResult.Tables[0].Rows)
+                    {
+                        databases.Add(row[0].ToString());
+                    }
+                }
+            }
+            return databases;
         }
         public List<ColumnInfo> GetColumnsByTableName(string tableName)
         {

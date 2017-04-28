@@ -19,8 +19,8 @@ namespace EntityGenerator.sqlAdapter
          public mssqlAdapter(ConnInfo connInfo)
         {
             this.connInfo = connInfo;
-            connStr = string.Format("server={0};user id={1};password={2};database={3}",
-            connInfo.server, connInfo.userName, connInfo.password, connInfo.databaseName);
+            connStr = string.Format("server={0};user id={1};password={2}",
+            connInfo.server, connInfo.userName, connInfo.password);
 
         }
         public bool TestConnection()
@@ -63,6 +63,33 @@ namespace EntityGenerator.sqlAdapter
                 }
             }
             return tables;
+        }
+        public List<String> GetAllDatabase()
+        {
+            var databases = new List<string>();
+            try
+            {
+                using (var conn = new SqlConnection(connStr))
+                {
+                    conn.Open();
+                    var cmd = new SqlCommand("select name from sysdatabases where   name   not   in('master','model','msdb','tempdb','northwind')", conn);
+                    var adapter = new SqlDataAdapter(cmd);
+                    var dsResult = new DataSet();
+                    adapter.Fill(dsResult);
+                    if (dsResult.Tables.Count > 0)
+                    {
+                        foreach (DataRow row in dsResult.Tables[0].Rows)
+                        {
+                            databases.Add(row[0].ToString());
+                        }
+                    }
+                }
+            }
+            catch (Exception)
+            {
+                
+            }
+            return databases;
         }
         public List<ColumnInfo> GetColumnsByTableName(string tableName)
         {

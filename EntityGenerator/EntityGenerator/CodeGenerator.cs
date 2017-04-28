@@ -78,7 +78,7 @@ namespace EntityGenerator
                         var columnBuider = new StringBuilder();
                         foreach (var column in columnInfos)
                         {
-                            columnBuider.Append("public " + TypeConvert.ConvertToCSharp(column.columnType) + " " + column.columnName + "{get;set;}");
+                           // columnBuider.Append("public " + TypeConvert.ConvertToCSharp(column.columnType) + " " + column.columnName + "{get;set;}");
                             columnBuider.Append("\r\n");
                         }
                         content = content.Replace("yx-content", columnBuider.ToString());
